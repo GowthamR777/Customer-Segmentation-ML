@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 # Load dataset
-data = pd.read_csv("Mall_Customers.csv")
+data = pd.read_csv("Mall_Customers_50k.csv")
 
 # Select features
 X = data[['Annual Income (k$)', 'Spending Score (1-100)']]
@@ -23,13 +23,13 @@ plt.xlabel("Number of Clusters")
 plt.ylabel("WCSS")
 plt.show()
 
-# Train KMeans
+# Train Model
 kmeans = KMeans(n_clusters=5, random_state=42)
 
 # Predict clusters
 y_kmeans = kmeans.fit_predict(X)
 
-# Visualize Clusters
+# Visualize clusters
 plt.scatter(
     X.iloc[:, 0],
     X.iloc[:, 1],
